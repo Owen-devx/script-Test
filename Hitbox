@@ -1,4 +1,5 @@
 -- pcall to avoid the script breaking on low level executors (e.g. Solara or any Xeno paste)
+--(No bypass) There is a chance of being banned
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/Lorchaeli/script-Test/refs/heads/main/Hitbox"))()
 
 getgenv().HBE = true
