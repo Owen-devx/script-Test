@@ -11,7 +11,7 @@ Title = "KOMAT Hub",
 Desc = "Evade Hub on top",
 Icon = 105059922903197,
 Theme = "Dark",
-Config = { Keybind = Enum.KeyCode.P, Size = UDim2.new(0,500,0,400) },
+Config = { Keybind = Enum.KeyCode.LeftControl, Size = UDim2.new(0,500,0,400) },
 CloseUIButton = { Enabled=true, Text="Evade Hub" }
 })
 
@@ -53,22 +53,6 @@ end
 -- =========================
 local autoBhop = false
 local floatingBhopButton
-
--- กด J เปิด/ปิด Auto Bhop
-local UserInputService = game:GetService("UserInputService")
-
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end
-    if input.KeyCode == Enum.KeyCode.J then
-        autoBhop = not autoBhop
-
-        -- อัปเดตข้อความปุ่มลอย (ถ้ามี)
-        if floatingBhopButton then
-            floatingBhopButton.Text = autoBhop and "Auto Bhop: ON" or "Auto Bhop: OFF"
-        end
-    end
-end)
-
 
 -- ปุ่มลอย
 local function createBhopFloatingButton()
