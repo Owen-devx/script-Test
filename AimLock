@@ -387,3 +387,5 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 print("Silent Aim Script with FOV, Rainbow Text & FOV Circle loaded!")
+
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Owen-devx/script-Test/refs/heads/main/AimLock"))()
