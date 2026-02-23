@@ -7,7 +7,506 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Owen-devx/script-Test
 
 
 
-local v0=game:GetService("UserInputService");local v1=game:GetService("Players");local v2=game:GetService("RunService");local v3=v1.LocalPlayer;local v4=workspace.CurrentCamera;local v5=v3:GetMouse();local v6=false;local v7=100;local v8=false;local v9="Head";local v10=427.15 -(166 + 261) ;local v11=false;local v12=false;local v13=567 -(289 + 218) ;local v14=false;local v15=false;local v16=1344 -(1213 + 131) ;local v17=false;local v18=Color3.fromRGB(58 + 197 ,50,30 + 20 );local v19=true;local v20=true;local v21=true;local v22,v23,v24=nil,nil,nil;local v25,v26=nil,nil;local v27=Instance.new("ScreenGui");v27.Parent=game:GetService("CoreGui");v27.Name="AimlockMenu";v27.DisplayOrder=36 -26 ;v27.ResetOnSpawn=false;v27.Enabled=false;local v33=Instance.new("Frame");v33.Size=UDim2.new(0 -0 ,220,859 -(814 + 45) ,1281 -761 );v33.Position=UDim2.new(0.05,0 + 0 ,0.05 + 0 ,885 -(261 + 624) );v33.BackgroundColor3=Color3.fromRGB(88 -38 ,1130 -(1020 + 60) ,1473 -(630 + 793) );v33.BackgroundTransparency=0.3 -0 ;v33.BorderSizePixel=0 -0 ;v33.Parent=v27;local function v40(v104,v105) local v106=Instance.new("TextLabel");v106.Size=UDim2.new(0,200,0 + 0 ,68 -48 );v106.Position=UDim2.new(1747 -(760 + 987) ,10,0,v105);v106.BackgroundTransparency=1914 -(1789 + 124) ;v106.TextColor3=Color3.fromRGB(255,1021 -(745 + 21) ,88 + 167 );v106.Text=v104;v106.Font=Enum.Font.SourceSans;v106.TextSize=38 -24 ;v106.TextXAlignment=Enum.TextXAlignment.Left;v106.Parent=v33;return v106;end local function v41(v118,v119) local v120=Instance.new("TextButton");v120.Size=UDim2.new(0,200,0,117 -87 );v120.Position=UDim2.new(0,1 + 9 ,0 + 0 ,v119);v120.BackgroundColor3=Color3.fromRGB(100,100,1155 -(87 + 968) );v120.TextColor3=Color3.fromRGB(255,1122 -867 ,232 + 23 );v120.Text=v118;v120.Font=Enum.Font.SourceSans;v120.TextSize=36 -20 ;v120.Parent=v33;return v120;end local v42=Instance.new("TextLabel");v42.Size=UDim2.new(1413 -(447 + 966) ,547 -347 ,1817 -(1703 + 114) ,30);v42.Position=UDim2.new(701 -(376 + 325) ,16 -6 ,0 -0 ,3 + 7 );v42.BackgroundTransparency=2 -1 ;v42.TextColor3=Color3.fromRGB(269 -(9 + 5) ,631 -(85 + 291) ,255);v42.Text="Aimlock + ESP Menu";v42.Font=Enum.Font.SourceSansBold;v42.TextSize=1283 -(243 + 1022) ;v42.Parent=v33;local v52=v41("Enable Aimlock",190 -140 );local v53=v40("FOV Size: "   .. v7 ,75 + 15 );local v54=Instance.new("TextButton");v54.Size=UDim2.new(1180 -(1123 + 57) ,163 + 37 ,254 -(163 + 91) ,1950 -(1869 + 61) );v54.Position=UDim2.new(0,3 + 7 ,0,110);v54.BackgroundColor3=Color3.fromRGB(352 -252 ,100,153 -53 );v54.Text="";v54.Parent=v33;local v60=Instance.new("Frame");v60.Size=UDim2.new(v7/(28 + 172) ,0 -0 ,1 + 0 ,0);v60.BackgroundColor3=Color3.fromRGB(180,1654 -(1329 + 145) ,1151 -(140 + 831) );v60.BorderSizePixel=0;v60.Parent=v54;local v65=v40("Aim Speed: "   .. v10 ,140);local v66=Instance.new("TextButton");v66.Size=UDim2.new(0,2050 -(1409 + 441) ,0,20);v66.Position=UDim2.new(0,728 -(15 + 703) ,0,160);v66.BackgroundColor3=Color3.fromRGB(47 + 53 ,100,538 -(262 + 176) );v66.Text="";v66.Parent=v33;local v72=Instance.new("Frame");v72.Size=UDim2.new((v10-0.1)/0.9 ,0,1,0);v72.BackgroundColor3=Color3.fromRGB(180,1901 -(345 + 1376) ,180);v72.BorderSizePixel=688 -(198 + 490) ;v72.Parent=v66;local v77=v41("Show FOV Circle: Off",839 -649 );local v78=v41("Wall Check: Off",230);local v79=v41("Team Check: Off",647 -377 );local v80=v40("Target Part: "   .. v9 ,310);local v81=Instance.new("TextButton");v81.Size=UDim2.new(1206 -(696 + 510) ,419 -219 ,1262 -(1091 + 171) ,25);v81.Position=UDim2.new(0,2 + 8 ,0 -0 ,335);v81.BackgroundColor3=Color3.fromRGB(331 -231 ,474 -(123 + 251) ,496 -396 );v81.TextColor3=Color3.fromRGB(255,953 -(208 + 490) ,255);v81.Text="▼  Select Part";v81.Parent=v33;local v88=v41("Rainbow FOV: Off",32 + 338 );local v89=v41("Rainbow Text: Off",410);v40("──────── ESP Settings ────────",445);local v90=v41("Enable ESP: Off",208 + 257 );local v91={"Head","UpperTorso","HumanoidRootPart","LowerTorso","LeftUpperArm","RightUpperArm","LeftLowerArm","RightLowerArm","LeftUpperLeg","RightUpperLeg","LeftLowerLeg","RightLowerLeg"};local v92=nil;local v93=false;local v94,v95;v42.InputBegan:Connect(function(v130) if (v130.UserInputType==Enum.UserInputType.MouseButton1) then v93=true;v94=v130.Position;v95=v33.Position;end end);v42.InputEnded:Connect(function(v131) if (v131.UserInputType==Enum.UserInputType.MouseButton1) then v93=false;end end);v0.InputChanged:Connect(function(v132) if (v93 and (v132.UserInputType==Enum.UserInputType.MouseMovement)) then local v195=v132.Position-v94 ;v33.Position=UDim2.new(v95.X.Scale,v95.X.Offset + v195.X ,v95.Y.Scale,v95.Y.Offset + v195.Y );end end);v81.MouseButton1Click:Connect(function() local v133=0 + 0 ;while true do if (v133==(396 -(115 + 281))) then if v92 then local v265=0 -0 ;while true do if (v265==(1 + 0)) then return;end if (v265==(0 -0)) then v92:Destroy();v92=nil;v265=3 -2 ;end end end v92=Instance.new("Frame");v133=1;end if (v133==3) then v92.Parent=v33;for v257,v258 in ipairs(v91) do local v259=0;local v260;while true do if (v259==(871 -(550 + 317))) then v260.Parent=v92;v260.MouseButton1Click:Connect(function() v9=v258;v80.Text="Target Part: "   .. v9 ;v92:Destroy();v92=nil;end);break;end if (v259==1) then v260.Position=UDim2.new(0,0,0,(v257-(1 -0)) * 25 );v260.BackgroundColor3=Color3.fromRGB(100,100,140 -40 );v259=5 -3 ;end if (v259==(287 -(134 + 151))) then v260.TextColor3=Color3.fromRGB(255,1920 -(970 + 695) ,486 -231 );v260.Text=v258;v259=1993 -(582 + 1408) ;end if (v259==(10 -7)) then v260.Font=Enum.Font.SourceSans;v260.TextSize=16 -2 ;v259=15 -11 ;end if (v259==(1824 -(1195 + 629))) then v260=Instance.new("TextButton");v260.Size=UDim2.new(1 -0 ,241 -(187 + 54) ,780 -(162 + 618) ,25);v259=1 + 0 ;end end end break;end if (v133==(2 + 0)) then v92.BackgroundColor3=Color3.fromRGB(170 -90 ,134 -54 ,7 + 73 );v92.BorderSizePixel=1636 -(1373 + 263) ;v133=1003 -(451 + 549) ;end if (v133==(1 + 0)) then v92.Size=UDim2.new(0,200,0, #v91 * (38 -13) );v92.Position=UDim2.new(0 -0 ,1394 -(746 + 638) ,0 + 0 ,360);v133=2 -0 ;end end end);local function v96() if v26 then v26:Destroy();end v26=Instance.new("ScreenGui");v26.Parent=v3:WaitForChild("PlayerGui");v26.Name="FOVCircleGui";v26.IgnoreGuiInset=true;v26.ResetOnSpawn=false;v25=Instance.new("Frame");v25.Size=UDim2.new(341 -(218 + 123) ,v7 * 2 ,1581 -(1535 + 46) ,v7 * (2 + 0) );v25.Position=UDim2.new(0 + 0 ,v5.X,560 -(306 + 254) ,v5.Y + v13 );v25.AnchorPoint=Vector2.new(0.5 + 0 ,0.5 -0 );v25.BackgroundTransparency=1468 -(899 + 568) ;v25.BorderSizePixel=0 + 0 ;v25.Visible=v8;v25.Parent=v26;local v145=Instance.new("UICorner");v145.CornerRadius=UDim.new(2 -1 ,0);v145.Parent=v25;local v148=Instance.new("UIStroke");v148.Color=Color3.fromRGB(858 -(268 + 335) ,255,255);v148.Thickness=2;v148.Transparency=0.3;v148.Parent=v25;end local function v97() if (v25 and v26) then local v197=290 -(60 + 230) ;while true do if (v197==(572 -(426 + 146))) then v25.Size=UDim2.new(0,v7 * (1 + 1) ,1456 -(282 + 1174) ,v7 * 2 );v25.Position=UDim2.new(811 -(569 + 242) ,v5.X,0 -0 ,v5.Y + v13 );v197=1 + 0 ;end if (1==v197) then v25.Visible=v8;break;end end end end local function v98(v153,v154) if  not v153 then return nil;end return v153:FindFirstChild(v154) or ((v154=="Torso") and (v153:FindFirstChild("UpperTorso") or v153:FindFirstChild("Torso"))) ;end local function v99(v155) if  not v155 then return nil;end return v155.Position + Vector3.new(1024 -(706 + 318) ,v155.Size.Y * 0.4 ,1251 -(721 + 530) ) ;end local function v100() if  not v6 then return;end local v156,v157=nil,v7;local v158=Vector2.new(v5.X,v5.Y + v13 );for v182,v183 in pairs(v1:GetPlayers()) do if ((v183~=v3) and v183.Character and v183.Character:FindFirstChild("Humanoid") and (v183.Character.Humanoid.Health>(1271 -(945 + 326)))) then local v207=0 -0 ;local v208;local v209;local v210;local v211;local v212;local v213;local v214;while true do if ((0 + 0)==v207) then v208=v98(v183.Character,v9);if  not v208 then continue;end v209=false;v207=701 -(271 + 429) ;end if ((2 + 0)==v207) then v211,v212=v4:WorldToViewportPoint(v210);v213=(Vector2.new(v211.X,v211.Y) -v158).Magnitude;v214=true;v207=3;end if (v207==(1503 -(1408 + 92))) then if v11 then local v295=RaycastParams.new();v295.FilterDescendantsInstances={v3.Character or {} };v295.FilterType=Enum.RaycastFilterType.Blacklist;local v299=workspace:Raycast(v4.CFrame.Position,(v210-v4.CFrame.Position).Unit * (3288 -(993 + 295)) ,v295);if (v299 and  not v299.Instance:IsDescendantOf(v183.Character)) then v214=false;end end if ((v213<v157) and v212 and v214) then v157=v213;v156=v183;end break;end if (v207==(1 + 0)) then if v12 then local v300=1171 -(418 + 753) ;while true do if (v300==0) then if (v3.Team and v183.Team and (v3.Team==v183.Team)) then v209=true;end if (v3.TeamColor==v183.TeamColor) then v209=true;end break;end end end if v209 then continue;end v210=v99(v208);v207=1 + 1 ;end end end end if v156 then local v198=0;local v199;while true do if (v198==(0 + 0)) then v199=v98(v156.Character,v9);if v199 then local v290=v99(v199);local v291=CFrame.new(v4.CFrame.Position,v290);v4.CFrame=v4.CFrame:Lerp(v291,v10);end break;end end end end local v101={};local function v102(v159) local v160=0 + 0 ;local v161;local v162;local v163;local v164;local v165;while true do if (v160==(0 + 0)) then if v101[v159] then return;end v161=v159.Character;if ( not v161 or  not v161:FindFirstChild("HumanoidRootPart")) then return;end v162=Instance.new("BoxHandleAdornment");v162.Adornee=v161;v160=530 -(406 + 123) ;end if (v160==(1772 -(1749 + 20))) then v163.AlwaysOnTop=true;v163.Parent=v161;v164=Instance.new("TextLabel",v163);v164.Size=UDim2.new(1 + 0 ,0,1322.4 -(1249 + 73) ,0);v164.BackgroundTransparency=1;v160=2 + 2 ;end if (v160==(1152 -(466 + 679))) then v101[v159]={box=v162,nameGui=v163,info=v165};break;end if (v160==(9 -5)) then v164.TextColor3=Color3.new(1,2 -1 ,1);v164.TextStrokeTransparency=0.4;v164.TextStrokeColor3=Color3.new(0,1900 -(106 + 1794) ,0 + 0 );v164.Font=Enum.Font.SourceSansBold;v164.TextSize=4 + 10 ;v160=14 -9 ;end if (v160==(2 -1)) then v162.Size=v161:GetExtentsSize() + Vector3.new(115 -(4 + 110) ,586 -(57 + 527) ,1) ;v162.Color3=v18;v162.Transparency=1427.6 -(41 + 1386) ;v162.AlwaysOnTop=true;v162.ZIndex=113 -(17 + 86) ;v160=2 + 0 ;end if (v160==(11 -6)) then v164.Text=v159.Name;v165=Instance.new("TextLabel",v163);v165.Size=UDim2.new(2 -1 ,0,166.3 -(122 + 44) ,0 -0 );v165.Position=UDim2.new(0,0,0.4 -0 ,0);v165.BackgroundTransparency=1 + 0 ;v160=6;end if (v160==6) then v165.TextColor3=Color3.new(1 + 0 ,0.9 -0 ,65.5 -(30 + 35) );v165.TextStrokeTransparency=0.5 + 0 ;v165.TextStrokeColor3=Color3.new(1257 -(1043 + 214) ,0 -0 ,0);v165.Font=Enum.Font.SourceSans;v165.TextSize=1224 -(323 + 889) ;v160=7;end if (v160==(5 -3)) then v162.Parent=v161;v163=Instance.new("BillboardGui");v163.Adornee=v161:FindFirstChild("Head") or v161.HumanoidRootPart ;v163.Size=UDim2.new(580 -(361 + 219) ,200,0,50);v163.StudsOffset=Vector3.new(320 -(53 + 267) ,1 + 2 ,413 -(15 + 398) );v160=3;end end end local function v103() if  not v17 then local v200=982 -(18 + 964) ;while true do if (v200==(3 -2)) then return;end if (v200==0) then for v273,v274 in pairs(v101) do if v274.box then v274.box:Destroy();end if v274.nameGui then v274.nameGui:Destroy();end end v101={};v200=1;end end end for v184,v185 in pairs(v1:GetPlayers()) do local v186=0 + 0 ;local v187;local v188;while true do if (v186==(0 + 0)) then if ((v185==v3) or  not v185.Character) then continue;end v187=v185.Character:FindFirstChild("Humanoid");v186=1;end if (v186==(852 -(20 + 830))) then v188=v101[v185];if ((v188.info and v21) or v19 or v20) then local v275=0 + 0 ;local v276;while true do if ((128 -(116 + 10))==v275) then v188.info.Text=v276;break;end if ((0 + 0)==v275) then v276="";if v21 then v276=v276   .. v185.Name   .. "\n" ;end v275=739 -(542 + 196) ;end if (1==v275) then if v19 then v276=v276   .. "HP: "   .. math.floor(v187.Health)   .. "/"   .. v187.MaxHealth   .. "\n" ;end if v20 then local v305=0 -0 ;local v306;while true do if (v305==0) then v306=(v3.Character and v3.Character:FindFirstChild("HumanoidRootPart") and (v185.Character.HumanoidRootPart.Position-v3.Character.HumanoidRootPart.Position).Magnitude) or (0 + 0) ;v276=v276   .. "Dist: "   .. math.floor(v306)   .. " studs" ;break;end end end v275=2;end end end break;end if (v186==(1 + 0)) then if ( not v187 or (v187.Health<=0)) then if v101[v185] then if v101[v185].box then v101[v185].box:Destroy();end if v101[v185].nameGui then v101[v185].nameGui:Destroy();end v101[v185]=nil;end continue;end if  not v101[v185] then v102(v185);end v186=2;end end end end v52.MouseButton1Click:Connect(function() v6= not v6;v52.Text=(v6 and "Disable Aimlock") or "Enable Aimlock" ;if v6 then v22=v2.RenderStepped:Connect(v97);v23=v2.RenderStepped:Connect(v100);if (v8 and  not v25) then v96();end else if v22 then local v262=0;while true do if (v262==(0 + 0)) then v22:Disconnect();v22=nil;break;end end end if v23 then v23:Disconnect();v23=nil;end if v25 then v25.Visible=false;end end end);v77.MouseButton1Click:Connect(function() v8= not v8;v77.Text="Show FOV Circle: "   .. ((v8 and "On") or "Off") ;if v8 then local v201=0;while true do if ((0 -0)==v201) then if  not v25 then v96();end v25.Visible=true;break;end end elseif v25 then v25.Visible=false;end end);v78.MouseButton1Click:Connect(function() v11= not v11;v78.Text="Wall Check: "   .. ((v11 and "On") or "Off") ;end);v79.MouseButton1Click:Connect(function() local v169=0 -0 ;while true do if (0==v169) then v12= not v12;v79.Text="Team Check: "   .. ((v12 and "On") or "Off") ;break;end end end);v88.MouseButton1Click:Connect(function() local v170=1551 -(1126 + 425) ;while true do if (v170==0) then v14= not v14;v88.Text="Rainbow FOV: "   .. ((v14 and "On") or "Off") ;break;end end end);v89.MouseButton1Click:Connect(function() v15= not v15;v89.Text="Rainbow Text: "   .. ((v15 and "On") or "Off") ;end);v90.MouseButton1Click:Connect(function() local v172=0;while true do if (v172==(405 -(118 + 287))) then v17= not v17;v90.Text="Enable ESP: "   .. ((v17 and "On") or "Off") ;break;end end end);v54.MouseButton1Down:Connect(function() local v173=v0.InputChanged:Connect(function(v189) if (v189.UserInputType==Enum.UserInputType.MouseMovement) then local v251=math.clamp((v189.Position.X-v54.AbsolutePosition.X)/v54.AbsoluteSize.X ,0 -0 ,1);v7=math.floor((v251 * (1321 -(118 + 1003))) + 0.5 );v60.Size=UDim2.new(v251,0,1,0 -0 );v53.Text="FOV Size: "   .. v7 ;v97();end end);local v174;v174=v0.InputEnded:Connect(function(v190) if (v190.UserInputType==Enum.UserInputType.MouseButton1) then local v254=377 -(142 + 235) ;while true do if (v254==(0 -0)) then v173:Disconnect();v174:Disconnect();break;end end end end);end);v66.MouseButton1Down:Connect(function() local v175=v0.InputChanged:Connect(function(v191) if (v191.UserInputType==Enum.UserInputType.MouseMovement) then local v255=0 + 0 ;local v256;while true do if (v255==(977 -(553 + 424))) then v256=math.clamp((v191.Position.X-v66.AbsolutePosition.X)/v66.AbsoluteSize.X ,0 -0 ,1 + 0 );v10=math.round((0.1 + 0 + (v256 * 0.9)) * (59 + 41) )/100 ;v255=1;end if (v255==(1 + 0)) then v72.Size=UDim2.new(v256,0,1 + 0 ,0 -0 );v65.Text="Aim Speed: "   .. v10 ;break;end end end end);local v176;v176=v0.InputEnded:Connect(function(v192) if (v192.UserInputType==Enum.UserInputType.MouseButton1) then v175:Disconnect();v176:Disconnect();end end);end);v2.RenderStepped:Connect(function(v177) local v178=0 -0 ;while true do if (v178==(2 -1)) then if v15 then for v279,v280 in ipairs(v33:GetChildren()) do if (v280:IsA("TextLabel") or v280:IsA("TextButton")) then v280.TextColor3=Color3.fromHSV(v16,1 + 0 ,4 -3 );end end end if v17 then v103();end break;end if (v178==(753 -(239 + 514))) then v16=(v16 + (v177 * (0.8 + 0)))%(1330 -(797 + 532)) ;if (v14 and v25) then local v270=v25:FindFirstChildOfClass("UIStroke");if v270 then v270.Color=Color3.fromHSV(v16,1,1 + 0 );end end v178=1;end end end);v0.InputBegan:Connect(function(v179,v180) local v181=0 + 0 ;while true do if (v181==(0 -0)) then if v180 then return;end if ((v179.KeyCode==Enum.KeyCode.L) and v0:IsKeyDown(Enum.KeyCode.LeftAlt)) then local v271=0;while true do if (v271==0) then v27.Enabled= not v27.Enabled;print("Aimlock + ESP GUI:",(v27.Enabled and "เปิดแล้ว 🟢") or "ซ่อนแล้ว 🔴" );break;end end end break;end end end);print("Aimlock +  Script loaded!");
+local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local mouse = player:GetMouse()
+
+-- Settings
+local isAimlockEnabled = false
+local fovSize = 100
+local showFovCircle = false
+local targetPart = "Head"
+local aimSpeed = 0.15
+local checkWalls = false
+local checkTeam = false
+local yOffset = 60
+local rainbowFOVEnabled = false
+local rainbowTextEnabled = false
+local rainbowHue = 0
+
+-- ESP Settings
+local espEnabled = false
+local espColor = Color3.fromRGB(255, 50, 50)   -- สีแดงเริ่มต้น
+local showHealth = true
+local showDistance = true
+local showName = true
+
+-- Connections
+local fovConnection, aimlockConnection, espConnection = nil, nil, nil
+local fovCircle, fovGui = nil, nil
+
+-- GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game:GetService("CoreGui")
+screenGui.Name = "AimlockMenu"
+screenGui.DisplayOrder = 10
+screenGui.ResetOnSpawn = false
+screenGui.Enabled = false
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 220, 0, 520)
+frame.Position = UDim2.new(0.05, 0, 0.05, 0)
+frame.BackgroundColor3 = Color3.fromRGB(50,50,50)
+frame.BackgroundTransparency = 0.3
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
+
+local function createLabel(text, posY)
+    local lbl = Instance.new("TextLabel")
+    lbl.Size = UDim2.new(0, 200, 0, 20)
+    lbl.Position = UDim2.new(0, 10, 0, posY)
+    lbl.BackgroundTransparency = 1
+    lbl.TextColor3 = Color3.fromRGB(255,255,255)
+    lbl.Text = text
+    lbl.Font = Enum.Font.SourceSans
+    lbl.TextSize = 14
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    lbl.Parent = frame
+    return lbl
+end
+
+local function createButton(text, posY)
+    local btn = Instance.new("TextButton")
+    btn.Size = UDim2.new(0, 200, 0, 30)
+    btn.Position = UDim2.new(0, 10, 0, posY)
+    btn.BackgroundColor3 = Color3.fromRGB(100,100,100)
+    btn.TextColor3 = Color3.fromRGB(255,255,255)
+    btn.Text = text
+    btn.Font = Enum.Font.SourceSans
+    btn.TextSize = 16
+    btn.Parent = frame
+    return btn
+end
+
+-- Title
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(0, 200, 0, 30)
+titleLabel.Position = UDim2.new(0, 10, 0, 10)
+titleLabel.BackgroundTransparency = 1
+titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+titleLabel.Text = "Aimlock + ESP Menu"
+titleLabel.Font = Enum.Font.SourceSansBold
+titleLabel.TextSize = 18
+titleLabel.Parent = frame
+
+-- Buttons & Labels (Aimlock section)
+local toggleAimlockButton = createButton("Enable Aimlock", 50)
+local fovLabel = createLabel("FOV Size: " .. fovSize, 90)
+local fovSlider = Instance.new("TextButton")
+fovSlider.Size = UDim2.new(0,200,0,20)
+fovSlider.Position = UDim2.new(0,10,0,110)
+fovSlider.BackgroundColor3 = Color3.fromRGB(100,100,100)
+fovSlider.Text = ""
+fovSlider.Parent = frame
+
+local fovSliderIndicator = Instance.new("Frame")
+fovSliderIndicator.Size = UDim2.new(fovSize/200,0,1,0)
+fovSliderIndicator.BackgroundColor3 = Color3.fromRGB(180,180,180)
+fovSliderIndicator.BorderSizePixel = 0
+fovSliderIndicator.Parent = fovSlider
+
+local aimSpeedLabel = createLabel("Aim Speed: " .. aimSpeed, 140)
+local aimSpeedSlider = Instance.new("TextButton")
+aimSpeedSlider.Size = UDim2.new(0,200,0,20)
+aimSpeedSlider.Position = UDim2.new(0,10,0,160)
+aimSpeedSlider.BackgroundColor3 = Color3.fromRGB(100,100,100)
+aimSpeedSlider.Text = ""
+aimSpeedSlider.Parent = frame
+
+local aimSpeedSliderIndicator = Instance.new("Frame")
+aimSpeedSliderIndicator.Size = UDim2.new((aimSpeed-0.1)/0.9,0,1,0)
+aimSpeedSliderIndicator.BackgroundColor3 = Color3.fromRGB(180,180,180)
+aimSpeedSliderIndicator.BorderSizePixel = 0
+aimSpeedSliderIndicator.Parent = aimSpeedSlider
+
+local toggleFovButton = createButton("Show FOV Circle: Off", 190)
+local toggleWallCheckButton = createButton("Wall Check: Off", 230)
+local toggleTeamCheckButton = createButton("Team Check: Off", 270)
+local targetLabel = createLabel("Target Part: " .. targetPart, 310)
+
+local targetDropdownButton = Instance.new("TextButton")
+targetDropdownButton.Size = UDim2.new(0,200,0,25)
+targetDropdownButton.Position = UDim2.new(0,10,0,335)
+targetDropdownButton.BackgroundColor3 = Color3.fromRGB(100,100,100)
+targetDropdownButton.TextColor3 = Color3.fromRGB(255,255,255)
+targetDropdownButton.Text = "▼  Select Part"
+targetDropdownButton.Parent = frame
+
+-- Rainbow
+local toggleRainbowFOVButton = createButton("Rainbow FOV: Off", 370)
+local toggleRainbowTextButton = createButton("Rainbow Text: Off", 410)
+
+-- ESP Section
+createLabel("──────── ESP Settings ────────", 445)
+local toggleESPButton = createButton("Enable ESP: Off", 465)
+
+-- Dropdown options
+local dropdownOptions = {"Head", "UpperTorso", "HumanoidRootPart", "LowerTorso", "LeftUpperArm", "RightUpperArm", "LeftLowerArm", "RightLowerArm", "LeftUpperLeg", "RightUpperLeg", "LeftLowerLeg", "RightLowerLeg"}
+local dropdownFrame = nil
+
+-- Dragging GUI
+local isDragging = false
+local dragStart, startPos
+titleLabel.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        dragStart = input.Position
+        startPos = frame.Position
+    end
+end)
+titleLabel.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = false
+    end
+end)
+UserInputService.InputChanged:Connect(function(input)
+    if isDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        frame.Position = UDim2.new(
+            startPos.X.Scale, startPos.X.Offset + delta.X,
+            startPos.Y.Scale, startPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+-- Target Part Dropdown
+targetDropdownButton.MouseButton1Click:Connect(function()
+    if dropdownFrame then dropdownFrame:Destroy() dropdownFrame = nil return end
+    dropdownFrame = Instance.new("Frame")
+    dropdownFrame.Size = UDim2.new(0,200,0,#dropdownOptions*25)
+    dropdownFrame.Position = UDim2.new(0,10,0,360)
+    dropdownFrame.BackgroundColor3 = Color3.fromRGB(80,80,80)
+    dropdownFrame.BorderSizePixel = 0
+    dropdownFrame.Parent = frame
+
+    for i, opt in ipairs(dropdownOptions) do
+        local btn = Instance.new("TextButton")
+        btn.Size = UDim2.new(1,0,0,25)
+        btn.Position = UDim2.new(0,0,0,(i-1)*25)
+        btn.BackgroundColor3 = Color3.fromRGB(100,100,100)
+        btn.TextColor3 = Color3.fromRGB(255,255,255)
+        btn.Text = opt
+        btn.Font = Enum.Font.SourceSans
+        btn.TextSize = 14
+        btn.Parent = dropdownFrame
+        btn.MouseButton1Click:Connect(function()
+            targetPart = opt
+            targetLabel.Text = "Target Part: " .. targetPart
+            dropdownFrame:Destroy()
+            dropdownFrame = nil
+        end)
+    end
+end)
+
+-- FOV Circle
+local function createFovCircle()
+    if fovGui then fovGui:Destroy() end
+    fovGui = Instance.new("ScreenGui")
+    fovGui.Parent = player:WaitForChild("PlayerGui")
+    fovGui.Name = "FOVCircleGui"
+    fovGui.IgnoreGuiInset = true
+    fovGui.ResetOnSpawn = false
+
+    fovCircle = Instance.new("Frame")
+    fovCircle.Size = UDim2.new(0, fovSize*2, 0, fovSize*2)
+    fovCircle.Position = UDim2.new(0, mouse.X, 0, mouse.Y + yOffset)
+    fovCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+    fovCircle.BackgroundTransparency = 1
+    fovCircle.BorderSizePixel = 0
+    fovCircle.Visible = showFovCircle
+    fovCircle.Parent = fovGui
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(1,0)
+    corner.Parent = fovCircle
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(255,255,255)
+    stroke.Thickness = 2
+    stroke.Transparency = 0.3
+    stroke.Parent = fovCircle
+end
+
+local function updateFovCircle()
+    if fovCircle and fovGui then
+        fovCircle.Size = UDim2.new(0, fovSize*2, 0, fovSize*2)
+        fovCircle.Position = UDim2.new(0, mouse.X, 0, mouse.Y + yOffset)
+        fovCircle.Visible = showFovCircle
+    end
+end
+
+-- Aimlock Logic
+local function getTargetPart(character, partName)
+    if not character then return nil end
+    return character:FindFirstChild(partName) or (partName == "Torso" and (character:FindFirstChild("UpperTorso") or character:FindFirstChild("Torso")))
+end
+
+local function getAimPosition(part)
+    if not part then return nil end
+    return part.Position + Vector3.new(0, part.Size.Y * 0.4, 0)   -- เล็งใกล้ ๆ กลาง-บน
+end
+
+local function aimlockFunction()
+    if not isAimlockEnabled then return end
+
+    local closest, shortest = nil, fovSize
+    local mousePos = Vector2.new(mouse.X, mouse.Y + yOffset)
+
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= player and p.Character and p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0 then
+            local part = getTargetPart(p.Character, targetPart)
+            if not part then continue end
+
+            local sameTeam = false
+            if checkTeam then
+                if player.Team and p.Team and player.Team == p.Team then sameTeam = true end
+                if player.TeamColor == p.TeamColor then sameTeam = true end
+            end
+            if sameTeam then continue end
+
+            local worldPos = getAimPosition(part)
+            local screenPos, onScreen = camera:WorldToViewportPoint(worldPos)
+            local dist = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+
+            local visible = true
+            if checkWalls then
+                local rayParams = RaycastParams.new()
+                rayParams.FilterDescendantsInstances = {player.Character or {}}
+                rayParams.FilterType = Enum.RaycastFilterType.Blacklist
+                local result = workspace:Raycast(camera.CFrame.Position, (worldPos - camera.CFrame.Position).Unit * 2000, rayParams)
+                if result and not result.Instance:IsDescendantOf(p.Character) then
+                    visible = false
+                end
+            end
+
+            if dist < shortest and onScreen and visible then
+                shortest = dist
+                closest = p
+            end
+        end
+    end
+
+    if closest then
+        local part = getTargetPart(closest.Character, targetPart)
+        if part then
+            local targetPos = getAimPosition(part)
+            local targetCF = CFrame.new(camera.CFrame.Position, targetPos)
+            camera.CFrame = camera.CFrame:Lerp(targetCF, aimSpeed)
+        end
+    end
+end
+
+-- ESP Function
+local espObjects = {}
+
+local function createESP(plr)
+    if espObjects[plr] then return end
+    local char = plr.Character
+    if not char or not char:FindFirstChild("HumanoidRootPart") then return end
+
+    local box = Instance.new("BoxHandleAdornment")
+    box.Adornee = char
+    box.Size = char:GetExtentsSize() + Vector3.new(1,2,1)
+    box.Color3 = espColor
+    box.Transparency = 0.6
+    box.AlwaysOnTop = true
+    box.ZIndex = 10
+    box.Parent = char
+
+    local nameTag = Instance.new("BillboardGui")
+    nameTag.Adornee = char:FindFirstChild("Head") or char.HumanoidRootPart
+    nameTag.Size = UDim2.new(0,200,0,50)
+    nameTag.StudsOffset = Vector3.new(0,3,0)
+    nameTag.AlwaysOnTop = true
+    nameTag.Parent = char
+
+    local nameLabel = Instance.new("TextLabel", nameTag)
+    nameLabel.Size = UDim2.new(1,0,0.4,0)
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.TextColor3 = Color3.new(1,1,1)
+    nameLabel.TextStrokeTransparency = 0.4
+    nameLabel.TextStrokeColor3 = Color3.new(0,0,0)
+    nameLabel.Font = Enum.Font.SourceSansBold
+    nameLabel.TextSize = 14
+    nameLabel.Text = plr.Name
+
+    local infoLabel = Instance.new("TextLabel", nameTag)
+    infoLabel.Size = UDim2.new(1,0,0.3,0)
+    infoLabel.Position = UDim2.new(0,0,0.4,0)
+    infoLabel.BackgroundTransparency = 1
+    infoLabel.TextColor3 = Color3.new(1,0.9,0.5)
+    infoLabel.TextStrokeTransparency = 0.5
+    infoLabel.TextStrokeColor3 = Color3.new(0,0,0)
+    infoLabel.Font = Enum.Font.SourceSans
+    infoLabel.TextSize = 12
+
+    espObjects[plr] = {box = box, nameGui = nameTag, info = infoLabel}
+end
+
+local function updateESP()
+    if not espEnabled then
+        for _, data in pairs(espObjects) do
+            if data.box then data.box:Destroy() end
+            if data.nameGui then data.nameGui:Destroy() end
+        end
+        espObjects = {}
+        return
+    end
+
+    for _, plr in pairs(Players:GetPlayers()) do
+        if plr == player or not plr.Character then continue end
+        local hum = plr.Character:FindFirstChild("Humanoid")
+        if not hum or hum.Health <= 0 then
+            if espObjects[plr] then
+                if espObjects[plr].box then espObjects[plr].box:Destroy() end
+                if espObjects[plr].nameGui then espObjects[plr].nameGui:Destroy() end
+                espObjects[plr] = nil
+            end
+            continue
+        end
+
+        if not espObjects[plr] then
+            createESP(plr)
+        end
+
+        local data = espObjects[plr]
+        if data.info and showName or showHealth or showDistance then
+            local text = ""
+            if showName then text = text .. plr.Name .. "\n" end
+            if showHealth then text = text .. "HP: " .. math.floor(hum.Health) .. "/" .. hum.MaxHealth .. "\n" end
+            if showDistance then
+                local dist = (player.Character and player.Character:FindFirstChild("HumanoidRootPart")) and 
+                    (plr.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude or 0
+                text = text .. "Dist: " .. math.floor(dist) .. " studs"
+            end
+            data.info.Text = text
+        end
+    end
+end
+
+-- Button Events
+toggleAimlockButton.MouseButton1Click:Connect(function()
+    isAimlockEnabled = not isAimlockEnabled
+    toggleAimlockButton.Text = isAimlockEnabled and "Disable Aimlock" or "Enable Aimlock"
+    
+    if isAimlockEnabled then
+        fovConnection = RunService.RenderStepped:Connect(updateFovCircle)
+        aimlockConnection = RunService.RenderStepped:Connect(aimlockFunction)
+        if showFovCircle and not fovCircle then createFovCircle() end
+    else
+        if fovConnection then fovConnection:Disconnect() fovConnection = nil end
+        if aimlockConnection then aimlockConnection:Disconnect() aimlockConnection = nil end
+        if fovCircle then fovCircle.Visible = false end
+    end
+end)
+
+toggleFovButton.MouseButton1Click:Connect(function()
+    showFovCircle = not showFovCircle
+    toggleFovButton.Text = "Show FOV Circle: " .. (showFovCircle and "On" or "Off")
+    if showFovCircle then
+        if not fovCircle then createFovCircle() end
+        fovCircle.Visible = true
+    else
+        if fovCircle then fovCircle.Visible = false end
+    end
+end)
+
+toggleWallCheckButton.MouseButton1Click:Connect(function()
+    checkWalls = not checkWalls
+    toggleWallCheckButton.Text = "Wall Check: " .. (checkWalls and "On" or "Off")
+end)
+
+toggleTeamCheckButton.MouseButton1Click:Connect(function()
+    checkTeam = not checkTeam
+    toggleTeamCheckButton.Text = "Team Check: " .. (checkTeam and "On" or "Off")
+end)
+
+toggleRainbowFOVButton.MouseButton1Click:Connect(function()
+    rainbowFOVEnabled = not rainbowFOVEnabled
+    toggleRainbowFOVButton.Text = "Rainbow FOV: " .. (rainbowFOVEnabled and "On" or "Off")
+end)
+
+toggleRainbowTextButton.MouseButton1Click:Connect(function()
+    rainbowTextEnabled = not rainbowTextEnabled
+    toggleRainbowTextButton.Text = "Rainbow Text: " .. (rainbowTextEnabled and "On" or "Off")
+end)
+
+toggleESPButton.MouseButton1Click:Connect(function()
+    espEnabled = not espEnabled
+    toggleESPButton.Text = "Enable ESP: " .. (espEnabled and "On" or "Off")
+end)
+
+-- Sliders
+fovSlider.MouseButton1Down:Connect(function()
+    local conn = UserInputService.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            local rel = math.clamp((input.Position.X - fovSlider.AbsolutePosition.X) / fovSlider.AbsoluteSize.X, 0, 1)
+            fovSize = math.floor(rel * 200 + 0.5)
+            fovSliderIndicator.Size = UDim2.new(rel, 0, 1, 0)
+            fovLabel.Text = "FOV Size: " .. fovSize
+            updateFovCircle()
+        end
+    end)
+    local endConn; endConn = UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            conn:Disconnect()
+            endConn:Disconnect()
+        end
+    end)
+end)
+
+aimSpeedSlider.MouseButton1Down:Connect(function()
+    local conn = UserInputService.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            local rel = math.clamp((input.Position.X - aimSpeedSlider.AbsolutePosition.X) / aimSpeedSlider.AbsoluteSize.X, 0, 1)
+            aimSpeed = math.round((0.1 + rel * 0.9) * 100) / 100
+            aimSpeedSliderIndicator.Size = UDim2.new(rel, 0, 1, 0)
+            aimSpeedLabel.Text = "Aim Speed: " .. aimSpeed
+        end
+    end)
+    local endConn; endConn = UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            conn:Disconnect()
+            endConn:Disconnect()
+        end
+    end)
+end)
+
+-- Rainbow + ESP loop
+RunService.RenderStepped:Connect(function(dt)
+    rainbowHue = (rainbowHue + dt * 0.8) % 1
+
+    if rainbowFOVEnabled and fovCircle then
+        local stroke = fovCircle:FindFirstChildOfClass("UIStroke")
+        if stroke then stroke.Color = Color3.fromHSV(rainbowHue, 1, 1) end
+    end
+
+    if rainbowTextEnabled then
+        for _, obj in ipairs(frame:GetChildren()) do
+            if obj:IsA("TextLabel") or obj:IsA("TextButton") then
+                obj.TextColor3 = Color3.fromHSV(rainbowHue, 1, 1)
+            end
+        end
+    end
+
+    if espEnabled then
+        updateESP()
+    end
+end)
+
+-- Toggle GUI with L + LeftAlt
+UserInputService.InputBegan:Connect(function(input, gpe)
+    if gpe then return end
+    if input.KeyCode == Enum.KeyCode.L and UserInputService:IsKeyDown(Enum.KeyCode.LeftAlt) then
+        screenGui.Enabled = not screenGui.Enabled
+        print("Aimlock + ESP GUI:", screenGui.Enabled and "เปิดแล้ว 🟢" or "ซ่อนแล้ว 🔴")
+    end
+end)
+
+print("Aimlock +  Script loaded!")
 
 
 --[[
